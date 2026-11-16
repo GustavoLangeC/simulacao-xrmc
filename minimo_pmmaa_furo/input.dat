@@ -1,0 +1,11 @@
+; Experimento mínimo controlado: PMMA 25 mm + perfuração passante de 10 mm.
+Load source.dat
+Load detector.dat
+Load spectrum.dat
+Load sample.dat
+Load quadric.dat
+Load geom3d.dat
+Load composition.dat
+
+Run DetectorArray
+Save DetectorArray Image output/image.dat

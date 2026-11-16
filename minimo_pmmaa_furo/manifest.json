@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "experiment": "PMMA 25 mm with one 10 mm through-hole",
+  "engine": "XRMC 6.7.0",
+  "units": "cm",
+  "source_detector_distance_cm": 100.0,
+  "source_center_xz_cm": [0.0, 0.0],
+  "phantom": {
+    "material": "PMMA",
+    "thickness_cm": 2.5,
+    "width_cm": 4.0,
+    "height_cm": 4.0,
+    "hole_diameter_cm": 1.0,
+    "hole_type": "through",
+    "hole_center_xz_cm": [0.0, 0.0],
+    "near_face_distance_to_detector_cm": 1.25
+  },
+  "additional_filter": {"material": "Al", "thickness_cm": 0.2},
+  "spectrum": {
+    "type": "monoenergetic",
+    "energy_keV": 50.0,
+    "warning": "Não representa o espectro real de um tubo em 81 kVp."
+  },
+  "detector": {"pixels": [256, 256], "pixel_size_cm": [0.02, 0.02]},
+  "scatter_order": 0,
+  "notes": "Experimento de verificação geométrica e de transmissão primária; não é uma reprodução validada da aquisição de William da Veiga."
+}

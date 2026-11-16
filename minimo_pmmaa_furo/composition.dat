@@ -1,0 +1,16 @@
+Newdevice composition
+Composition
+
+Phase PMMA
+NElem 3
+1 8.05
+6 59.99
+8 31.96
+Rho 1.19
+
+Phase Al
+NElem 1
+13 100.0
+Rho 2.70
+
+End

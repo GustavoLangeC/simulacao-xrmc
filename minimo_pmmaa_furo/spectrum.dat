@@ -1,0 +1,12 @@
+Newdevice spectrum
+Spectrum
+PolarizedFlag 0
+LoopFlag 1
+ContinuousPhotonNum 1
+LinePhotonNum 1
+RandomEneFlag 1
+Lines
+1
+; Fonte MONOENERGÉTICA de teste: 50 keV, não é espectro clínico de 81 kVp.
+50 0.0 1e10
+End

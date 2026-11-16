@@ -1,0 +1,12 @@
+Newdevice source
+Source
+SpectrumName Spectrum
+; Fonte em cm; detector no plano y=0, FDD = 100 cm.
+X 0 -100 0
+uk 0 1 0
+ui -1 0 0
+; Semiángulo suficiente para cobrir o detector de 5,12 cm a 1 m.
+Divergence 0.035 0.035
+; Fonte quase pontual; tamanho real do foco ainda não foi calibrado.
+Size 0.01 0.01 0.01
+End

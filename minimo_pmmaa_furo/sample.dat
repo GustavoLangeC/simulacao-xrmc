@@ -1,0 +1,11 @@
+Newdevice sample
+Sample
+SourceName Source
+Geom3DName Geom3D
+CompName Composition
+WeightedStepLength 1
+FluorFlag 0
+; Primeiro teste: transmissão primária, sem espalhamento.
+ScattOrderNum 0
+1
+End

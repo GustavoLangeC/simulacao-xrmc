@@ -1,0 +1,7 @@
+/.deps/
+/.venv/
+/minimo_pmmaa_furo/output/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+*.log

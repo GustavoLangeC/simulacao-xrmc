@@ -1,0 +1,21 @@
+Newdevice geom3d
+Geom3D
+QArrName QuadricArray
+CompName Composition
+
+Object PMMAPlate
+PMMA Vacuum
+6
+PlateXm PlateXp PlateZm PlateZp PlateYm PlateYp
+
+; A segunda geometria substitui PMMA por vácuo no interior do furo.
+Object ThroughHole
+Vacuum PMMA
+3
+Hole HoleYm HoleYp
+
+Object AluminumFilter
+Al Vacuum
+6
+FilterXm FilterXp FilterZm FilterZp FilterYm FilterYp
+End

@@ -1,0 +1,41 @@
+Newdevice quadricarray
+QuadricArray
+
+; Placa PMMA: 4 x 4 x 2,5 cm. Eixo do feixe = y.
+Plane PlateXm
+-2 0 0 -1 0 0
+Plane PlateXp
+2 0 0 1 0 0
+Plane PlateZm
+0 0 -2 0 0 -1
+Plane PlateZp
+0 0 2 0 0 1
+Plane PlateYm
+0 -3.75 0 0 -1 0
+Plane PlateYp
+0 -1.25 0 0 1 0
+
+; Perfuração passante de diâmetro 10 mm, eixo paralelo ao feixe.
+CylinderY Hole
+0 0 0.5 0.5
+; Planos próprios, 0,01 mm internos às faces da placa. Evitam
+; coincidência numérica com as faces externas da placa.
+Plane HoleYm
+0 -3.749 0 0 -1 0
+Plane HoleYp
+0 -1.251 0 0 1 0
+
+; Filtro adicional de Al: 2 mm de espessura, 2 x 2 cm, perto da fonte.
+Plane FilterXm
+-1 0 0 -1 0 0
+Plane FilterXp
+1 0 0 1 0 0
+Plane FilterZm
+0 0 -1 0 0 -1
+Plane FilterZp
+0 0 1 0 0 1
+Plane FilterYm
+0 -95.10 0 0 -1 0
+Plane FilterYp
+0 -94.90 0 0 1 0
+End

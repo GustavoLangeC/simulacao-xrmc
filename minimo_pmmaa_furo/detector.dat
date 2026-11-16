@@ -1,0 +1,23 @@
+Newdevice detectorarray
+DetectorArray
+SourceName Sample
+NPixels 256 256
+PixelSize 0.02 0.02
+Shape 0
+dOmegaLim 1e-2
+X 0 0 0
+uk 0 -1 0
+ui 1 0 0
+ExpTime 1
+PhotonNum 1
+RandomPixelFlag 1
+PoissonFlag 0
+RoundFlag 0
+HeaderFlag 1
+PixelType 0
+Seeds 4
+123450
+123451
+123452
+123453
+End
