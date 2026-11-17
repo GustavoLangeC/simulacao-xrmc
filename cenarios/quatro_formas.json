@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "model": "analitico_ilustrativo",
+  "image_shape_yx": [256, 256],
+  "phantom_box_yxyx": [20, 20, 236, 236],
+  "phantom_thickness_mm": 25,
+  "pmma_signal": 46000,
+  "mu_cm_inv": 0.24,
+  "noise_sigma": 20,
+  "gradient_per_pixel_xy": [1.5, -0.7],
+  "seed": 20261116,
+  "objects": [
+    {"shape": "circle", "center_xy_px": [65, 65], "radius_px": 17, "depth_mm": 5},
+    {"shape": "rectangle", "center_xy_px": [168, 65], "size_xy_px": [44, 28], "depth_mm": 10},
+    {"shape": "ellipse", "center_xy_px": [68, 170], "radii_xy_px": [22, 14], "depth_mm": 15},
+    {"shape": "L", "center_xy_px": [168, 170], "size_xy_px": [50, 50], "thickness_px": 12, "depth_mm": 20}
+  ]
+}

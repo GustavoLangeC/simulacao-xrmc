@@ -67,6 +67,11 @@ def generate(manifest_path, image_path, output_path):
         'manifest_sha256': sha256(manifest_path),
         'reference_regions': int(np.unique(labels[labels > 0]).size),
         'reference_pixels': int(np.count_nonzero(labels)),
+        'reference_objects': [{
+            'reference_id': 1, 'shape': 'circulo_passante',
+            'depth_mm': float(manifest['phantom']['thickness_cm']) * 10,
+            'area_px': int(np.count_nonzero(labels)),
+        }],
         'boundary_note': 'Amostragem de pixels e penumbra podem deslocar a borda visível.',
     }
     output_path.with_suffix('.json').write_text(

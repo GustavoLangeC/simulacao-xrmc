@@ -48,7 +48,7 @@ do equipamento Philips nem a segmentação.
 No repositório irmão `segmentador-fantomas`, execute:
 
 ```bash
-venv/bin/python -m radio2.avaliar_simulacao \
+venv/bin/python -m segmentador_fantomas.avaliar_simulacao \
   --imagem ../simulacao-xrmc/minimo_pmmaa_furo/output/image.npy \
   --referencia ../simulacao-xrmc/minimo_pmmaa_furo/output/verdade_simulada.npz \
   --saida resultados/avaliacao_simulada
@@ -59,6 +59,36 @@ O vínculo SHA-256 impede avaliar uma referência criada para outra imagem.
 O modelo geométrico usa raios centrais e centros de pixel; amostragem e
 penumbra podem produzir diferenças de borda. O cenário atual tem um único
 furo passante e não demonstra generalização do detector.
+
+## Cenários analíticos de estresse
+
+`gerar_cenario_analitico.py` cria imagens `float64` e referências NPZ para
+testar o software sem executar XRMC. Há três configurações em `cenarios/`:
+
+| Configuração | Objetivo |
+| --- | --- |
+| `quatro_formas.json` | Círculo, retângulo, elipse e L com profundidades de 5, 10, 15 e 20 mm, ruído baixo e gradiente. |
+| `baixo_contraste.json` | Duas regiões rasas com ruído e gradiente fortes. |
+| `saturacao.json` | Duas regiões com sinal limitado artificialmente por um teto. |
+
+Exemplo, dentro deste repositório:
+
+```bash
+.venv/bin/python gerar_cenario_analitico.py \
+  --config cenarios/quatro_formas.json --saida cenarios_gerados/quatro_formas
+```
+
+Depois execute `segmentador_fantomas.avaliar_simulacao` no repositório irmão,
+apontando `--imagem` para `image.npy` e `--referencia` para
+`verdade_simulada.npz` da pasta gerada. O manifesto registra a geometria,
+o ruído, o gradiente, a semente e os parâmetros do modelo; a referência
+registra profundidades somente para a **avaliação posterior**.
+
+O sinal ilustrativo é `S=(S_PMMA+gradiente)·exp(μ·profundidade_cm)+ruído`,
+com eventual corte por `clip_max`. O coeficiente `μ=0,24 cm⁻¹` e os níveis
+numéricos são parâmetros de demonstração, sem calibração para os DICOMs ou
+para o equipamento do TCC. Esses cenários revelam falhas e limites do
+detector; não são evidência de desempenho clínico nem equivalem ao XRMC.
 
 ## Estrutura de coordenadas e unidades
 
